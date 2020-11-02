@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr">
+        <item>스</item>
+        <item>피</item>
+        <item>너</item>
+        <item>레</item>
+        <item>이</item>
+        <item>아</item>
+        <item>웃</item>
+    </string-array>
+</resources>
