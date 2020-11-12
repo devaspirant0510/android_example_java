@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_btn1"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_adb_24"
+        android:title="안드로이드 다이어트성공"/>
+    <item
+        android:id="@+id/action_btn2"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_emoji_food_beverage_24"
+        android:title="카페인 수소폭탄"/>
+    <item
+        android:id="@+id/action_btn3"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_g_translate_24"
+        android:title="구글하는 번역"/>
+    <item
+        android:id="@+id/action_btn4"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_headset_mic_24"
+        android:title="헤드크"/>
+    <item
+        android:id="@+id/action_btn5"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_commute_24"
+        android:title="접촉사고남"/>
+
+</menu>
