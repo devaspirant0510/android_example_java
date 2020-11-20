@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/android_master"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안드로이드  장인"
+        android:textColor="#8BC34A"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/deep_learning"
+        android:layout_below="@+id/android_master"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="딥러닝 개잘함"
+        android:textColor="#FF9800"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/AI"
+        android:layout_below="@+id/android_master"
+        android:layout_toRightOf="@id/deep_learning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AI"
+        android:textColor="#F44336"
+        android:textSize="30sp"
+        android:layout_toEndOf="@id/deep_learning" />
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3F51B5"
+        android:text="중앙바"
+        android:textSize="30sp"
+
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF9E80"
+        android:text="오른쪽 사이드 상단"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFE57F"
+        android:text="오른쪽 사이드 중앙"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#84FFFF"
+        android:text="왼쪽 사이드 하단"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF9E80"
+        android:text="중앙바 왼손"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/center"
+        android:layout_toStartOf="@id/center" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#DD2C00"
+        android:text="중앙바 모자"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/center"/>
+
+</RelativeLayout>
