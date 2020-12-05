@@ -4,18 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
         android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:text="값을 가져와 주세요"/>
     <Button
-        android:id="@+id/btn_go"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_act1"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go"/>
+        android:text="1번 화면"/>
+    <Button
+        android:id="@+id/btn_act2"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2번 화면"/>
 
 </LinearLayout>

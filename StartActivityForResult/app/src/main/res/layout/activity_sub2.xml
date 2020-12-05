@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#81D4FA"
-    tools:context=".subActivity1">
+    android:background="#FFE082"
+    tools:context=".subActivity2">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1번 화면"
+        android:text="2번 화면"
         android:gravity="center"
         android:textSize="30sp"/>
     <LinearLayout
@@ -30,6 +30,4 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
-
 </LinearLayout>

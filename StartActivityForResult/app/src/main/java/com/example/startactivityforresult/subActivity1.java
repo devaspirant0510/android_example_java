@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class subActivity extends AppCompatActivity {
+public class subActivity1 extends AppCompatActivity {
     private Button submit_btn;
     private EditText editT;
     @Override
@@ -22,12 +22,17 @@ public class subActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-
                 String editT_str = editT.getText().toString();
-                intent.putExtra("editText_msg",editT_str);
-                setResult(RESULT_OK,intent);
+                if (editT_str.length()==0){
+                    setResult(RESULT_CANCELED,intent);
+                }
+                else {
+                    intent.putExtra("sub1",editT_str);
+                    setResult(RESULT_OK, intent);
+                }
                 finish();
             }
         });
     }
+
 }
