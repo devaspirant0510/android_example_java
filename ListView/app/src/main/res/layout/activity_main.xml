@@ -6,16 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="listView"/>
     <ListView
         android:id="@+id/list_view"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-
-
-
 </LinearLayout>
