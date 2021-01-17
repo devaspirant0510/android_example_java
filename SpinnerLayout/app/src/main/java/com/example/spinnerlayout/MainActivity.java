@@ -3,10 +3,8 @@ package com.example.spinnerlayout;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,17 +14,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView result,tv;
+    private TextView result;
     private Spinner spinner;
-    private Button plus;
+    private Button add;
+    private Button delete;
     ArrayAdapter<String> arrayAdapter;
-    List<String> list;
+    List<String> itemList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,18 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = (Spinner)findViewById(R.id.spinner);
         result = (TextView)findViewById(R.id.result);
-        int sum = spinner.getCount();
-        plus = (Button)findViewById(R.id.plus);
-        tv = (TextView)findViewById(R.id.tv);
-        list = new ArrayList<>();
+
+        add = (Button)findViewById(R.id.add);
+        delete = (Button)findViewById(R.id.delete);
+        itemList = new ArrayList<>();
         for (int i = 0; i < spinner.getCount(); i++) {
-            list.add(String.valueOf(spinner.getItemAtPosition(i)));
+            itemList.add(String.valueOf(spinner.getItemAtPosition(i)));
 
         }
-        list.add("aaa");
-        list.add("bb");
 
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list);
+
+        arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, itemList);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -60,11 +56,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        plus.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 show();
-
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int getPosition = spinner.getSelectedItemPosition();
+                itemList.remove(getPosition);
+                arrayAdapter.notifyDataSetChanged();
+                result.setText(spinner.getSelectedItem().toString());
             }
         });
 
@@ -75,15 +79,14 @@ public class MainActivity extends AppCompatActivity {
         final EditText edittext = new EditText(getApplicationContext());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("AlertDialog Title");
-        builder.setMessage("AlertDialog Content");
+        builder.setTitle("아이템 추가");
+        builder.setMessage("추가할 아이템을 입력하세요");
         builder.setView(edittext);
         builder.setPositiveButton("입력",
             new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     Toast.makeText(getApplicationContext(),edittext.getText().toString() ,Toast.LENGTH_LONG).show();
-                    tv.setText(edittext.getText().toString());
-                    list.add(edittext.getText().toString());
+                    itemList.add(edittext.getText().toString());
                     arrayAdapter.notifyDataSetChanged();
                 }
             });
