@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RecyclerViewApplication</string>
+    <string name="user">user</string>
+    <string name="comment">comment</string>
+    <string name="other_user">other_user</string>
+    <string name="other_comment">other_comment</string>
+    <string name="other_time">13:23</string>
+    <string name="my_user">my_user</string>
+    <string name="my_comment">my_comment</string>
+    <string name="my_time">13:23</string>
+</resources>
