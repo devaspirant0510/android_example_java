@@ -9,13 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.bottomnavi.databinding.Frag3Binding;
+
 public class Fr3 extends Fragment {
-    private View view;
+    private View root;
+    private Frag3Binding mb;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.frag3,container,false);
+        mb = Frag3Binding.inflate(getLayoutInflater());
+        root = mb.getRoot();
+        return root;
 
-        return view;
     }
 }
