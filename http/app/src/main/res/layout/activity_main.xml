@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,16 +21,16 @@
         <EditText
             android:id="@+id/etext"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-
-            android:hint="input:" />
+            android:layout_weight="2"
+            android:hint="input:"
+            android:text="http://www.naver.com" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Button" />
     </LinearLayout>
 
@@ -44,6 +44,7 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,9 +52,9 @@
 
             <TextView
                 android:id="@+id/log"
-                android:background="#FF8A65"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:background="#FF8A65" />
         </LinearLayout>
     </ScrollView>
 
