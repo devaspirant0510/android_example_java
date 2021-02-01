@@ -20,7 +20,7 @@
         android:id="@+id/tv_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="level : 0"/>
+        android:text="Level : 0"/>
     <Button
         android:id="@+id/btn_score"
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:id="@+id/tv_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="score : 0"/>
+        android:text="Score : 0"/>
 
 
 
