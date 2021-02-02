@@ -26,12 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(root);
 
         SharedPreferences sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         String userName = sharedPreferences.getString("name","");
-        mb.etTest.setText(userName);
         m_level = sharedPreferences.getInt("level",0);
         m_score = sharedPreferences.getInt("score",0);
+        mb.etTest.setText(userName);
         mb.tvLevel.setText("Level : "+m_level);
         mb.tvScore.setText("Score : "+m_score);
         mb.btnLevel.setOnClickListener(new View.OnClickListener() {
