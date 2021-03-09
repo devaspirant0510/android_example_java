@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,46 +13,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button dialog_btn;
+    private Button btn_alert_dialog,btn_dialog;
     private TextView tv_test;
+    private MyDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dialog_btn = (Button)findViewById(R.id.dialog_btn);
-        dialog_btn.setOnClickListener(new View.OnClickListener() {
+        btn_dialog = findViewById(R.id.btn_dialog);
+        tv_test = findViewById(R.id.tv_dialog_result);
+        btn_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
-                ad.setIcon(R.mipmap.ic_launcher);
-                ad.setTitle("dialog title");
-                ad.setMessage("나는 존재합까?");
-
-                final EditText et = new EditText(MainActivity.this);
-                ad.setView(et);
-                ad.setPositiveButton("네 맞습니다.", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String result = et.getText().toString();
-                        tv_test.setText(result);
-                        Toast.makeText(getApplicationContext(),"오호 글쿤 당신이 말한"+result+"기억하겠네",Toast.LENGTH_LONG).show();
-                        dialog.dismiss();
-                    }
-                });
-                ad.setNegativeButton("아닌데요", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"아니군",Toast.LENGTH_SHORT).show();
-                        tv_test.setText("");
-                        dialog.dismiss();
-                    }
-                });
-                ad.show();
+                openDialog();
             }
-
         });
+    }
 
-        tv_test = (TextView) findViewById(R.id.tv_test);
+    public void openDialog(){
+        dialog = new MyDialog(this);
+        dialog.show();
+        dialog.setDialogCallback(new DialogCallback() {
+            @Override
+            public void setOnClickDialog(String text) {
+                tv_test.setText(text);
+                Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
