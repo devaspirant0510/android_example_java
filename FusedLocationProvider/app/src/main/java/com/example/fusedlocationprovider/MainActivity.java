@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }).start();
-                Toast.makeText(getApplicationContext(), location.getAltitude() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
