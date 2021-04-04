@@ -17,6 +17,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private TextView tvTime;
     private static final String TAG = "MainActivity";
+    TimeHandler handler = new TimeHandler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,31 +29,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public class TimeThread extends Thread {
         @Override
         public void run() {
-            int i=0;
-            //TimeHandler handler = new TimeHandler();
-            while(true){
-                SimpleDateFormat format1 = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss");
+            int i = 0;
+            while (true) {
+                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date date = new Date();
-                Log.e(TAG, "onCreate: "+format1.format(date) );
+                Log.e(TAG, "onCreate: " + format1.format(date));
                 try {
                     Thread.sleep(1000);
-                    Handler handler = new Handler(Looper.getMainLooper());
+                    Message msg = handler.obtainMessage();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("date", format1.format(date));
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
 
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Message msg = handler.obtainMessage();
-                            Bundle bundle = new Bundle();
-                            bundle.putString("date",format1.format(date));
-                            msg.setData(bundle);
-                            tvTime.setText(format1.format(date));
+                    //Handler handler = new Handler(Looper.getMainLooper());
 
 
-                        }
-                    });
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            tvTime.setText(format1.format(date));
+//                        }
+//                    });
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -60,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public class TimeHandler extends Handler{
-        @NonNull
-        @Override
-        public String getMessageName(@NonNull Message message) {
-            String data = message.getData().getString("date");
-            tvTime.setText(data);
-            return super.getMessageName(message);
 
+    public class TimeHandler extends Handler {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            String data = msg.getData().getString("date");
+            tvTime.setText(data);
         }
+
     }
 }
