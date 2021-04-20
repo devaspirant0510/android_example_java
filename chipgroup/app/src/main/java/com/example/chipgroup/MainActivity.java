@@ -65,38 +65,28 @@ public class MainActivity extends AppCompatActivity {
                 if (isLoc) {
                     String[] getArray = val.split("]");
                     chip.setText(getArray[1]);
-                    // 선택기능 막음
-                    chip.setCheckable(false);
                     // 아이콘 리소스 설정
                     chip.setChipIconResource(R.drawable.location);
                     // 삭제버튼 활성화 (단, 콜백리스너에서 구현해야 삭제됨)
                     chip.setCloseIconVisible(true);
                     chipGroup1.addView(chip);
-
                 } else if (isMail) {
                     String[] getArray = val.split("]");
-
                     chip.setText(getArray[1]);
-                    chip.setCheckable(false);
                     chip.setChipIconResource(R.drawable.mail);
                     chip.setCloseIconVisible(true);
                     chipGroup1.addView(chip);
 
                 } else if (isPhone) {
                     String[] getArray = val.split("]");
-
                     chip.setText(getArray[1]);
-                    chip.setCheckable(false);
                     chip.setChipIconResource(R.drawable.phone);
                     chip.setCloseIconVisible(true);
                     chipGroup1.addView(chip);
-
                 } else {
                     chip.setText(getName);
-                    chip.setCheckable(false);
                     chip.setCloseIconVisible(true);
                     chipGroup1.addView(chip);
-
                 }
                 // 입력하면 editText 값 초기화
                 editText1.setText("");
@@ -136,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
                             chipGroup2.removeView(chip);
                         }
                     });
+                    chip.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this,chip.getText().toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     // 추가할시 ChipGroup 에서 EditText 앞에다 추가
                     chipGroup2.addView(chip, chipGroup2.getChildCount()-1);
                     try {
@@ -158,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 String checkChip = "";
                 for (int i : chipGroup3.getCheckedChipIds()) {
                     Chip chip = (Chip) chipGroup3.getChildAt(i - 1);
-
+                    chip.seTe
                     checkChip = String.format("%s %s ", checkChip, chip.getText());
                 }
                 Toast.makeText(MainActivity.this, checkChip, Toast.LENGTH_SHORT).show();

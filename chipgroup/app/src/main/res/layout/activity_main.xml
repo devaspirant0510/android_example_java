@@ -48,6 +48,7 @@
 
         <EditText
             android:id="@+id/et_content2"
+            android:hint="#태그입력"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -64,11 +65,11 @@
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:chipIcon="@drawable/js"
             app:checkedIconVisible="true"
             app:chipIconVisible="true"
             app:chipIconEnabled="false"
             android:checkable="true"
-            app:chipIcon="@drawable/js"
             android:text="javascript"/>
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
