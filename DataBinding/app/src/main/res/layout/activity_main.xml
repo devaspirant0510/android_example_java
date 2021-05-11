@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="textData"
             type="com.example.databinding.TextData" />
+
 
     </data>
     <LinearLayout 
@@ -18,6 +20,7 @@
             android:id="@+id/tv_text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="@{textData.text1.length()>4?View.GONE:View.VISIBLE}"
             android:text="@{textData.text1}"/>
         <TextView
             android:id="@+id/tv_text2"
@@ -29,6 +32,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{textData.text3}"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"/>
 
     </LinearLayout>
 </layout>
