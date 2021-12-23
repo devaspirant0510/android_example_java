@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/start_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/check_val"
+        android:text="현재값"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/thread1"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="스레드 시작" />
+        android:text="0"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/stop_btn"
-        android:layout_width="match_parent"
+        android:id="@+id/start_btn1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="스레드 종료" />
+        android:text="스레드 시작" />
+
+
 </LinearLayout>

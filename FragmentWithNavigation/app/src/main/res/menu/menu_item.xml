@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/frag1"
+        android:title="frag1"
+        android:icon="@drawable/ic_launcher_foreground"/>
+    <item
+        android:id="@+id/frag2"
+        android:title="frag2"
+        android:icon="@drawable/ic_launcher_foreground"/>
+    <item
+        android:id="@+id/frag3"
+        android:title="frag3"
+        android:icon="@drawable/ic_launcher_foreground"/>
+
+</menu>
